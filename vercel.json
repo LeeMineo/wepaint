@@ -1,0 +1,26 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/templates/index.html" },
+
+    { "source": "/create/step1", "destination": "/templates/create/step1.html" },
+    { "source": "/create/step2", "destination": "/templates/create/step2.html" },
+    { "source": "/create/step3", "destination": "/templates/create/step3.html" },
+
+    { "source": "/mypage", "destination": "/templates/mypage/mypage.html" },
+    { "source": "/mypage/history", "destination": "/templates/mypage/history.html" },
+    { "source": "/mypage/myinfo", "destination": "/templates/mypage/myinfo.html" },
+
+    { "source": "/option/background", "destination": "/templates/option/background.html" },
+    { "source": "/option/character", "destination": "/templates/option/character.html" },
+    { "source": "/option/coloring", "destination": "/templates/option/coloring.html" },
+    { "source": "/option/payment_done", "destination": "/templates/option/payment_done.html" },
+    { "source": "/option/picture", "destination": "/templates/option/picture.html" },
+
+    { "source": "/product", "destination": "/templates/product/product.html" },
+
+    { "source": "/upload/choice_done", "destination": "/templates/upload/choice_done.html" },
+    { "source": "/upload/loading", "destination": "/templates/upload/loading.html" },
+    { "source": "/upload/result", "destination": "/templates/upload/result.html" },
+    { "source": "/upload", "destination": "/templates/upload/upload.html" }
+  ]
+}
