@@ -10,7 +10,7 @@
     body {
       font-family: 'Pretendard', sans-serif;
       background: #fff;
-      padding: 20px;
+      padding: 25px 2rem;
     }
 
     .header {
@@ -138,16 +138,16 @@
   </style>
 </head>
 <body>
+    <div class="menu-icon" id="menuToggle">☰</div>
 
   <!-- 상단 바 -->
   <div class="header">
     <div class="back" onclick="history.back()">←</div>
-    <div class="menu">☰</div>
   </div>
 
   <!-- 상품 정보 -->
   <div class="product-info">
-    <img src="/assets/image/coloring_sample.png" alt="컬러링 엽서" />
+    <img src="/assets/image/coloring.png" alt="컬러링 엽서" />
     <div>
       <h2>컬러링 엽서</h2>
       <div class="price">6,000</div>
@@ -191,8 +191,8 @@
   <div class="modal" id="menuModal">
     <div class="modal-close" id="menuClose">✕</div>
     <img src="/assets/icon/icon.svg" alt="페인트 브러시" class="modal-logo" />
-    <h2>서비스 이용</h2>
     <nav>
+      <a href="#" class="active" >서비스 이용</a>
       <a href="#">서비스 소개</a>
       <a href="#">마이페이지</a>
       <a href="#">문의 하기</a>

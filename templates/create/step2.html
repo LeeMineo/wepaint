@@ -18,16 +18,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 40px 20px;
-    }
-
-    .menu-icon {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 28px;
-      cursor: pointer;
-      z-index: 10;
+      padding: 30px 2rem;
     }
 
     .step-indicator {
@@ -35,13 +26,14 @@
       justify-content: center;
       align-items: center;
       margin-bottom: 60px;
+      margin-top: 3rem; 
     }
 
     .step {
-      width: 32px;
-      height: 32px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
-      border: 2px solid #2F80ED;
+      border: 1px solid #2F80ED;
       color: #2F80ED;
       display: flex;
       align-items: center;
@@ -55,8 +47,8 @@
     }
 
     .line {
-      height: 2px;
-      width: 40px;
+      height: 1px;
+      width: 15vw;
       background-color: #2F80ED;
     }
 
@@ -103,16 +95,20 @@
       opacity: 0;
     }
 
+    /* 다음 버튼 */
     .next-button {
-      background-color: #2F80ED;
-      color: white;
-      font-size: 18px;
-      padding: 14px 30px;
-      border: none;
-      border-radius: 30px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      transition: background-color 0.3s ease;
+      display: block;
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    background-color: #2F80ED;
+    color: white;
+    font-size: 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    margin-top: 15rem; 
     }
 
     .next-button:hover {
@@ -144,16 +140,14 @@
   </div>
 
   <!-- 다음 버튼 -->
-  <a href="/templates/create/step3.html">
-    <button class="next-button">다음</button>
-  </a>
+  <a href="/templates/create/step3.html" class="next-button">다음</a>
 
   <!-- 메뉴 모달 -->
   <div class="modal" id="menuModal">
     <div class="modal-close" id="menuClose">✕</div>
     <img src="/assets/icon/icon.svg" alt="페인트 브러시" class="modal-logo" />
-    <h2>서비스 이용</h2>
     <nav>
+      <a href="#" class="active" >서비스 이용</a>
       <a href="#">서비스 소개</a>
       <a href="#">마이페이지</a>
       <a href="#">문의 하기</a>

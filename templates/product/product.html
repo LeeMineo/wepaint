@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<link rel="stylesheet" href="/styles/global.css" />
+    <link rel="stylesheet" href="/styles/global.css" />
   <title>옵션 선택 - WEPAINT</title>
   <style>
     * {
@@ -16,16 +16,16 @@
       font-family: 'Pretendard', sans-serif;
       background-color: #fff;
       text-align: center;
-      padding: 40px 20px;
+      padding: 30px 2rem;
     }
 
-    .menu-icon {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 26px;
-      cursor: pointer;
-    }
+    .main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; /* (선택) 가로 중앙 정렬도 하고 싶을 경우 */
+        height: 90vh;
+        }
 
     .logo {
       width: 50px;
@@ -33,7 +33,8 @@
     }
 
     h2 {
-      font-size: 20px;
+      font-size: 24px;
+      font-weight: 600;
       margin-bottom: 40px;
       line-height: 1.4;
     }
@@ -47,12 +48,12 @@
     }
 
     .option-card {
-      border: 2px solid #ddd;
+      border: 1px solid #ddd;
       border-radius: 12px;
       padding: 20px;
-      width: 140px;
+      width: 35vw;
+      max-width: 20rem;
       cursor: pointer;
-      transition: 0.3s;
     }
 
     .option-card img {
@@ -71,54 +72,61 @@
     }
 
     .complete-button {
+        display: block;
+        width: 100%;
       font-size: 18px;
       padding: 14px 60px;
       border-radius: 30px;
-      border: 2px solid #2F80ED;
+      border: 1px solid #2F80ED;
       background-color: transparent;
       color: #2F80ED;
       cursor: pointer;
       transition: 0.3s;
     }
 
+
+
     .complete-button.active {
       background-color: #2F80ED;
       color: white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
   </style>
 </head>
 <body>
 
   <!-- 햄버거 메뉴 -->
-  <div class="menu-icon">☰</div>
+  <div class="menu-icon" id="menuToggle">☰</div>
 
-  <!-- 로고 -->
-  <img src="/assets/icon/icon.svg" alt="logo" class="logo" />
+  <main class="main">
+    <!-- 로고 -->
+    <img src="/assets/icon/icon.svg" alt="logo" class="logo" />
 
-  <!-- 제목 -->
-  <h2>원하시는 옵션을<br>선택해주세요</h2>
+    <!-- 제목 -->
+    <h2>원하시는 옵션을<br>선택해주세요</h2>
 
-  <!-- 옵션 선택 -->
-  <div class="options">
-    <div class="option-card" onclick="selectOption('coloring')" id="coloringCard">
-      <img src="/assets/image/coloring_sample.png" alt="컬러링 엽서" />
-      <p>컬러링 엽서</p>
+    <!-- 옵션 선택 -->
+    <div class="options">
+        <div class="option-card" onclick="selectOption('coloring')" id="coloringCard">
+        <img src="/assets/image/coloring.png" alt="컬러링 엽서" />
+        <p>컬러링 엽서</p>
+        </div>
+        <div class="option-card" onclick="selectOption('photo')" id="photoCard">
+        <img src="/assets/image/picture.png" alt="캐릭터 사진" />
+        <p>캐릭터 사진</p>
+        </div>
     </div>
-    <div class="option-card" onclick="selectOption('photo')" id="photoCard">
-      <img src="/assets/image/photo_sample.png" alt="캐릭터 사진" />
-      <p>캐릭터 사진</p>
-    </div>
-  </div>
 
-  <!-- 완료 버튼 -->
-  <button class="complete-button" id="completeBtn" disabled>완료</button>
+    <!-- 완료 버튼 -->
+    <button class="complete-button" id="completeBtn" disabled>완료</button>
+    </main>
 
   <!-- 메뉴 모달 -->
   <div class="modal" id="menuModal">
     <div class="modal-close" id="menuClose">✕</div>
     <img src="/assets/icon/icon.svg" alt="페인트 브러시" class="modal-logo" />
-    <h2>서비스 이용</h2>
     <nav>
+      <a href="#" class="active" >서비스 이용</a>
       <a href="#">서비스 소개</a>
       <a href="#">마이페이지</a>
       <a href="#">문의 하기</a>
