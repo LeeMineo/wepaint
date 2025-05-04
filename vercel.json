@@ -7,7 +7,8 @@
     { "source": "/create/step3", "destination": "/templates/create/step3.html" },
 
     { "source": "/mypage", "destination": "/templates/mypage/mypage.html" },
-    { "source": "/mypage/history", "destination": "/templates/mypage/history.html" },
+    { "source": "/mypage/history_coloring", "destination": "/templates/mypage/history_coloring.html" },
+    { "source": "/mypage/history_picture", "destination": "/templates/mypage/history_picture.html" },
     { "source": "/mypage/myinfo", "destination": "/templates/mypage/myinfo.html" },
 
     { "source": "/option/background", "destination": "/templates/option/background.html" },

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>약관 동의 - WEPAINT</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Pretendard', sans-serif;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .menu-icon {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .step-indicator {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+
+    .step {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 2px solid #2F80ED;
+      color: #2F80ED;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+
+    .step.active {
+      background-color: #2F80ED;
+      color: white;
+    }
+
+    .line {
+      height: 2px;
+      width: 40px;
+      background-color: #2F80ED;
+    }
+
+    h2 {
+      font-size: 22px;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    p.sub {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .agreement-group {
+      width: 100%;
+      max-width: 360px;
+      border-top: 1px solid #ccc;
+    }
+
+    .agreement-item {
+      border-bottom: 1px solid #ccc;
+      padding: 18px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .agreement-item input {
+      margin-right: 10px;
+    }
+
+    .agreement-label {
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+    }
+
+    .arrow {
+      font-size: 18px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .arrow.rotate {
+      transform: rotate(180deg);
+    }
+
+    .agreement-content {
+      font-size: 14px;
+      color: #555;
+      margin-top: 10px;
+      display: none;
+      line-height: 1.6;
+    }
+
+    .agreement-content.active {
+      display: block;
+    }
+
+    .complete-button {
+      margin-top: 60px;
+      background-color: #2F80ED;
+      color: white;
+      font-size: 18px;
+      padding: 14px 30px;
+      border: none;
+      border-radius: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .complete-button:hover {
+      background-color: #1c6dd0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 햄버거 아이콘 -->
+  <div class="menu-icon" id="menuToggle">☰</div>
+
+  <!-- 단계 표시 -->
+  <div class="step-indicator">
+    <div class="step">1</div>
+    <div class="line"></div>
+    <div class="step">2</div>
+    <div class="line"></div>
+    <div class="step active">3</div>
+  </div>
+
+  <!-- 제목 -->
+  <h2>이용약관 동의</h2>
+  <p class="sub">나중에 안내 시 사용돼요!</p>
+
+  <!-- 동의 항목 -->
+  <div class="agreement-group">
+
+    <!-- 전체 동의 -->
+    <div class="agreement-item">
+      <label class="agreement-label">
+        <input type="checkbox" id="agreeAll" /> 전체 동의
+      </label>
+    </div>
+
+    <!-- 항목 1 -->
+    <div class="agreement-item">
+      <label class="agreement-label">
+        <input type="checkbox" class="agree-item" id="agree1" />
+        (필수) 개인정보 수집 및 이용 동의
+      </label>
+      <span class="arrow" id="arrow1" onclick="toggleDetail(1)">▼</span>
+    </div>
+    <div class="agreement-content" id="content1">
+      - 수집 항목: 이름, 전화번호<br>
+      - 수집 목적: 서비스 제공 및 사용자 식별<br>
+      - 보유 기간: 동의 철회 또는 서비스 탈퇴 시까지
+    </div>
+
+    <!-- 항목 2 -->
+    <div class="agreement-item">
+      <label class="agreement-label">
+        <input type="checkbox" class="agree-item" id="agree2" />
+        (필수) 개인정보 제3자 제공 동의 약관
+      </label>
+      <span class="arrow" id="arrow2" onclick="toggleDetail(2)">▼</span>
+    </div>
+    <div class="agreement-content" id="content2">
+      - 제공받는 자: 파트너사<br>
+      - 제공 항목: 이름, 전화번호<br>
+      - 제공 목적: 서비스 연동 및 맞춤형 안내<br>
+      - 보유 기간: 제공 목적 달성 시까지
+    </div>
+
+  </div>
+
+  <!-- 완료 버튼 -->
+  <button class="complete-button" id="submitBtn">완료</button>
+
+  <!-- 기능 스크립트 -->
+  <script>
+    function toggleDetail(num) {
+      const content = document.getElementById(`content${num}`);
+      const arrow = document.getElementById(`arrow${num}`);
+
+      const isOpen = content.classList.contains('active');
+      content.classList.toggle('active', !isOpen);
+      arrow.classList.toggle('rotate', !isOpen);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const agreeAll = document.getElementById('agreeAll');
+      const agreeItems = document.querySelectorAll('.agree-item');
+
+      // 전체 동의 클릭
+      agreeAll.addEventListener('change', () => {
+        agreeItems.forEach(item => {
+          item.checked = agreeAll.checked;
+        });
+      });
+
+      // 개별 동의 변경 시 전체동의 자동 반영
+      agreeItems.forEach(item => {
+        item.addEventListener('change', () => {
+          const allChecked = Array.from(agreeItems).every(i => i.checked);
+          agreeAll.checked = allChecked;
+        });
+      });
+
+      // 완료 버튼 클릭
+      document.getElementById('submitBtn').addEventListener('click', () => {
+        const allChecked = Array.from(agreeItems).every(i => i.checked);
+        if (!allChecked) {
+          alert("필수 약관에 모두 동의해주세요.");
+        } else {
+          window.location.href = "/templates/product/product.html";
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

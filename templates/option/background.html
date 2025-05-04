@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>배경 선택</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Pretendard', sans-serif;
+      padding: 20px;
+      background: #fff;
+      text-align: center;
+    }
+
+    .menu {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .logo {
+      width: 40px;
+      margin: 40px auto 20px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    /* 스크롤 영역 */
+    .scroll-wrapper {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      padding: 20px 0;
+      margin: 20px 0 40px;
+      scroll-snap-type: x mandatory;
+    }
+
+    .bg-card {
+      flex: 0 0 auto;
+      width: 140px;
+      border: 2px solid #ccc;
+      border-radius: 12px;
+      padding: 10px;
+      scroll-snap-align: start;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+
+    .bg-card img {
+      width: 100%;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 8px;
+    }
+
+    .bg-card.selected {
+      border-color: #2F80ED;
+      box-shadow: 0 0 10px rgba(47, 128, 237, 0.3);
+    }
+
+    .next-button {
+      padding: 16px 40px;
+      font-size: 18px;
+      background: #2F80ED;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin-bottom: 20px;
+    }
+
+    /* ✅ 네모 박스 */
+    .info-box {
+    width: 100%;              /* 전체 너비 다 사용 */
+    height: 100px;
+    background-color: #f4f4f4;
+    border-radius: 12px;
+    margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 햄버거 메뉴 -->
+  <div class="menu">☰</div>
+
+  <!-- 로고 -->
+  <img src="/assets/icon/icon.svg" alt="로고" class="logo" />
+
+  <h2>배경을<br/>선택해주세요</h2>
+
+  <!-- 가로 스크롤 배경 선택 -->
+  <div class="scroll-wrapper" id="bgContainer">
+    <div class="bg-card" data-id="bg1">
+      <img src="https://picsum.photos/id/1003/200/120" alt="배경1">
+      <div>한동대 현동홀</div>
+    </div>
+    <div class="bg-card" data-id="bg2">
+      <img src="https://picsum.photos/id/1025/200/120" alt="배경2">
+      <div>일반 배경</div>
+    </div>
+    <div class="bg-card" data-id="bg3">
+      <img src="https://picsum.photos/id/1018/200/120" alt="배경3">
+      <div>풍경 배경</div>
+    </div>
+  </div>
+
+  <!-- 다음 버튼 -->
+  <button class="next-button" id="nextBtn">다음</button>
+
+  <!-- ✅ 네모 박스 -->
+  <div class="info-box"></div>
+
+  <script>
+    const cards = document.querySelectorAll('.bg-card');
+    const nextBtn = document.getElementById('nextBtn');
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        cards.forEach(c => c.classList.remove('selected'));
+        card.classList.add('selected');
+      });
+    });
+
+    nextBtn.addEventListener('click', () => {
+      window.location.href = '/option/character.html';
+    });
+  </script>
+
+</body>
+</html>

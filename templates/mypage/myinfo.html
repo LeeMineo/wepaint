@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>내 정보</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Pretendard', sans-serif;
+      background: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .top-bar {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .menu, .back {
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .logo {
+      width: 50px;
+      margin: 80px auto 20px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 24px;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .input-group input {
+      padding: 14px 20px;
+      border-radius: 40px;
+      border: 2px solid #888;
+      font-size: 18px;
+      text-align: center;
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .action-link {
+      color: #2F80ED;
+      font-size: 18px;
+      cursor: pointer;
+      margin-bottom: 60px;
+      display: inline-block;
+    }
+
+    .logout {
+      color: #ff5c5c;
+      font-size: 18px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="back" onclick="history.back()">←</div>
+    <div class="menu">☰</div>
+  </div>
+
+  <img src="/assets/icon/icon.svg" alt="로고" class="logo" />
+  <h2>내 정보</h2>
+
+  <div class="input-group">
+    <input type="text" id="nameInput" value="이민서" readonly>
+    <input type="text" id="phoneInput" value="010-8001-5701" readonly>
+  </div>
+
+  <div class="action-link" id="editBtn">정보수정</div>
+  <div class="logout">로그아웃</div>
+
+  <script>
+    const nameInput = document.getElementById('nameInput');
+    const phoneInput = document.getElementById('phoneInput');
+    const editBtn = document.getElementById('editBtn');
+
+    let isEditing = false;
+
+    editBtn.addEventListener('click', () => {
+      if (!isEditing) {
+        nameInput.removeAttribute('readonly');
+        phoneInput.removeAttribute('readonly');
+        nameInput.focus();
+        editBtn.textContent = '수정완료';
+        isEditing = true;
+      } else {
+        nameInput.setAttribute('readonly', true);
+        phoneInput.setAttribute('readonly', true);
+        editBtn.textContent = '정보수정';
+        isEditing = false;
+      }
+    });
+  </script>
+
+</body>
+</html>

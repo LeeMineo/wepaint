@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>WEPAINT - 나만의 AI 캐릭터 컬러링</title>
+  <link rel="stylesheet" href="/styles/global.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Pretendard', sans-serif;
+      background-color: #ffffff;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+      padding: 30px;
+    }
+
+    .floating-square {
+      width: 12px;
+      height: 12px;
+      position: absolute;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .square1 {
+      background-color: #ECA6A3;
+      top: 25%;
+      left: 38%;
+      animation-delay: 0s;
+    }
+
+    .square2 {
+      background-color: #FFDE85;
+      top: 50%;
+      left: 20%;
+      animation-delay: 1s;
+    }
+
+    .square3 {
+      background-color: #8DD4E6;
+      top: 35%;
+      left: 82%;
+      animation-delay: 2s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+    }
+
+    .logo {
+      width: 200px;
+      max-width: 80%;
+      margin-bottom: 20px;
+      z-index: 1;
+    }
+
+    .description {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 60px;
+      z-index: 1;
+    }
+
+    .start-button {
+    display: block;
+    width: 100%;
+    padding: 16px 0;
+    margin: 0 24px;
+    text-align: center;
+    background-color: #2F80ED;
+    color: white;
+    font-size: 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  }
+
+  .start-button:hover {
+    background-color: #1c6dd0;
+  }
+
+/*  */
+  </style>
+</head>
+<body>
+
+  <!-- 햄버거 아이콘 -->
+  <div class="menu-icon" id="menuToggle">☰</div>
+
+  <!-- 떠다니는 네모 -->
+  <div class="floating-square square1"></div>
+  <div class="floating-square square2"></div>
+  <div class="floating-square square3"></div>
+
+  <!-- 중앙 로고 -->
+  <img src="/assets/icon/wepaint.svg" alt="WEPAINT 로고" class="logo" />
+
+  <!-- 설명 -->
+  <p class="description">나만의 AI캐릭터 컬러링 제작</p>
+
+  <!-- 시작하기 버튼 -->
+  <!-- <button class="start-button">시작하기</button> -->
+  <a href="/templates/create/step1.html" class="start-button">시작하기</a>
+  
+  
+  <!-- 메뉴 모달 -->
+  <div class="modal" id="menuModal">
+    <div class="modal-close" id="menuClose">✕</div>
+    <img src="/assets/icon/icon.svg" alt="페인트 브러시" class="modal-logo" />
+    <h2>서비스 이용</h2>
+    <nav>
+      <a href="#">서비스 소개</a>
+      <a href="#">마이페이지</a>
+      <a href="#">문의 하기</a>
+    </nav>
+    <div class="language-select">ko ▼</div>
+  </div>
+</body>
+<script defer src="/scripts/modal.js"></script>
+
+</html>

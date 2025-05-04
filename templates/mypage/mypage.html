@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>마이페이지</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Pretendard', sans-serif;
+      background: #f9f9f9;
+      padding: 20px;
+    }
+
+    .menu {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      background: #5d5d5d;
+      color: white;
+      border-radius: 10px;
+      padding: 16px;
+      margin-top: 60px;
+    }
+
+    .profile img {
+      width: 48px;
+      height: 48px;
+      margin-right: 16px;
+    }
+
+    .profile-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .profile-info strong {
+      font-size: 18px;
+    }
+
+    .profile-info span {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    .profile-icon {
+    background: white;
+    padding: 12px;
+    border-radius: 5px;
+    margin-right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+    .profile-icon img {
+    width: 36px;
+    height: 36px;
+    margin: 0;
+    padding: 0;
+    }
+
+    .section-title {
+      font-size: 20px;
+      margin: 32px 0 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .section-title select {
+      border: none;
+      font-size: 16px;
+      background: transparent;
+      color: #333;
+    }
+
+    .history-list {
+      background: #f5f5f5;
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .history-item {
+      background: white;
+      padding: 16px;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .history-left {
+      text-align: left;
+    }
+
+    .history-left strong {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .history-left span {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .history-price {
+      font-size: 16px;
+    }
+
+    .history-price span {
+      color: #2F80ED;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="menu">☰</div>
+
+  <div class="profile">
+    <div class="profile-icon">
+      <img src="/assets/icon/icon.svg" alt="로고">
+    </div>
+    <div class="profile-info">
+      <strong>이민서 님</strong>
+      <span>010-8001-5701</span>
+    </div>
+  </div>
+  
+
+  <div class="section-title">
+    <span>이용 내역</span>
+    <select>
+      <option>All</option>
+      <!-- 필터 옵션 추가 가능 -->
+    </select>
+  </div>
+
+  <div class="history-list">
+    <!-- 반복 영역 -->
+    <div class="history-item">
+      <div class="history-left">
+        <strong>컬러링 엽서</strong>
+        <span>2025년 5월 1일</span>
+      </div>
+      <div class="history-price">
+        총 <span>8,000</span>원
+      </div>
+    </div>
+    <div class="history-item">
+      <div class="history-left">
+        <strong>컬러링 엽서</strong>
+        <span>2025년 5월 1일</span>
+      </div>
+      <div class="history-price">
+        총 <span>8,000</span>원
+      </div>
+    </div>
+    <div class="history-item">
+      <div class="history-left">
+        <strong>컬러링 엽서</strong>
+        <span>2025년 5월 1일</span>
+      </div>
+      <div class="history-price">
+        총 <span>8,000</span>원
+      </div>
+    </div>
+    <div class="history-item">
+      <div class="history-left">
+        <strong>컬러링 엽서</strong>
+        <span>2025년 5월 1일</span>
+      </div>
+      <div class="history-price">
+        총 <span>8,000</span>원
+      </div>
+    </div>
+    <div class="history-item">
+      <div class="history-left">
+        <strong>컬러링 엽서</strong>
+        <span>2025년 5월 1일</span>
+      </div>
+      <div class="history-price">
+        총 <span>8,000</span>원
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

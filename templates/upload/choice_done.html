@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>선택 완료</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Pretendard', sans-serif;
+      background: #fff;
+      text-align: center;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .menu {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .check-icon {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      color: #888;
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
+
+    .button {
+      background: #2F80ED;
+      color: white;
+      font-size: 18px;
+      padding: 16px 40px;
+      border: none;
+      border-radius: 40px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      cursor: pointer;
+      width: 80%;
+      max-width: 400px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 햄버거 메뉴 -->
+  <div class="menu">☰</div>
+
+  <!-- 체크 아이콘 -->
+  <img src="/assets/icon/check.svg" alt="완료" class="check-icon">
+
+  <!-- 텍스트 -->
+  <h2>선택이 완료 되었습니다!</h2>
+  <p>상품 준비 완료 시 알람이 가요.</p>
+
+  <!-- 버튼 -->
+  <button class="button">확인</button>
+
+</body>
+</html>

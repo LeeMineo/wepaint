@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>캐릭터 사진 상세</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Pretendard', sans-serif;
+      background: #fff;
+      padding: 20px;
+      color: #000;
+      position: relative;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .icon {
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .preview-container {
+      border: 2px solid #333;
+      border-radius: 10px;
+      padding: 10px;
+      margin: 30px 0 20px;
+    }
+
+    .preview-container img {
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    .title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+
+    .title-row span:last-child {
+      color: #2F80ED;
+      font-weight: bold;
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      font-size: 16px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .date {
+      text-align: right;
+      color: #888;
+      font-size: 15px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="icon" onclick="history.back()">←</div>
+    <div class="icon">☰</div>
+  </div>
+
+  <div class="preview-container">
+    <img src="https://via.placeholder.com/400x300?text=캐릭터+사진" alt="캐릭터 이미지" />
+  </div>
+
+  <div class="title-row">
+    <div>캐릭터 사진</div>
+    <div>총 <span>3,000</span>원</div>
+  </div>
+
+  <div class="detail-row">
+    <div>갯수 선택</div>
+    <div>2개</div>
+  </div>
+  <div class="detail-row">
+    <div>추가 옵션 선택</div>
+    <div>없음</div>
+  </div>
+
+  <div class="date">2025년 5월 1일</div>
+
+</body>
+</html>

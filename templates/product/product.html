@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>옵션 선택 - WEPAINT</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Pretendard', sans-serif;
+      background-color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .menu-icon {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    .logo {
+      width: 50px;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 40px;
+      line-height: 1.4;
+    }
+
+    .options {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+    }
+
+    .option-card {
+      border: 2px solid #ddd;
+      border-radius: 12px;
+      padding: 20px;
+      width: 140px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .option-card img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 12px;
+    }
+
+    .option-card p {
+      font-size: 16px;
+    }
+
+    .option-card.selected {
+      border-color: #2F80ED;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    .complete-button {
+      font-size: 18px;
+      padding: 14px 60px;
+      border-radius: 30px;
+      border: 2px solid #2F80ED;
+      background-color: transparent;
+      color: #2F80ED;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .complete-button.active {
+      background-color: #2F80ED;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 햄버거 메뉴 -->
+  <div class="menu-icon">☰</div>
+
+  <!-- 로고 -->
+  <img src="/assets/icon/icon.svg" alt="logo" class="logo" />
+
+  <!-- 제목 -->
+  <h2>원하시는 옵션을<br>선택해주세요</h2>
+
+  <!-- 옵션 선택 -->
+  <div class="options">
+    <div class="option-card" onclick="selectOption('coloring')" id="coloringCard">
+      <img src="/assets/image/coloring_sample.png" alt="컬러링 엽서" />
+      <p>컬러링 엽서</p>
+    </div>
+    <div class="option-card" onclick="selectOption('photo')" id="photoCard">
+      <img src="/assets/image/photo_sample.png" alt="캐릭터 사진" />
+      <p>캐릭터 사진</p>
+    </div>
+  </div>
+
+  <!-- 완료 버튼 -->
+  <button class="complete-button" id="completeBtn" disabled>완료</button>
+
+  <script>
+    let selected = null;
+
+    function selectOption(option) {
+      selected = option;
+
+      // 카드 스타일 변경
+      document.getElementById("coloringCard").classList.remove("selected");
+      document.getElementById("photoCard").classList.remove("selected");
+
+      document.getElementById(option + "Card").classList.add("selected");
+
+      // 완료 버튼 활성화
+      const btn = document.getElementById("completeBtn");
+      btn.classList.add("active");
+      btn.disabled = false;
+    }
+
+    document.getElementById("completeBtn").addEventListener("click", () => {
+      if (selected) {
+        // 다음 페이지로 이동 또는 선택 처리
+        alert(`선택된 옵션: ${selected}`);
+        // window.location.href = "/upload/upload.html"; 등으로 이동 가능
+      }
+    });
+  </script>
+
+</body>
+</html>
