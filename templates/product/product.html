@@ -2,7 +2,8 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<link rel="stylesheet" href="/styles/global.css" />
   <title>옵션 선택 - WEPAINT</title>
   <style>
     * {
@@ -112,6 +113,19 @@
   <!-- 완료 버튼 -->
   <button class="complete-button" id="completeBtn" disabled>완료</button>
 
+  <!-- 메뉴 모달 -->
+  <div class="modal" id="menuModal">
+    <div class="modal-close" id="menuClose">✕</div>
+    <img src="/assets/icon/icon.svg" alt="페인트 브러시" class="modal-logo" />
+    <h2>서비스 이용</h2>
+    <nav>
+      <a href="#">서비스 소개</a>
+      <a href="#">마이페이지</a>
+      <a href="#">문의 하기</a>
+    </nav>
+    <div class="language-select">ko ▼</div>
+  </div>
+
   <script>
     let selected = null;
 
@@ -140,4 +154,5 @@
   </script>
 
 </body>
+<script defer src="/scripts/modal.js"></script>
 </html>
